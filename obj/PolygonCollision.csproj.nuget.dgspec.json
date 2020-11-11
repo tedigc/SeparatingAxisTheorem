@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj": {}
+  },
+  "projects": {
+    "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj",
+        "projectName": "PolygonCollision",
+        "projectPath": "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj",
+        "packagesPath": "/Users/tedigc/.nuget/packages/",
+        "outputPath": "/Users/tedigc/Desktop/PolygonCollision/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/tedigc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MonoGame.Content.Builder.Task": {
+              "target": "Package",
+              "version": "[3.8.0.1641, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.0.1641, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
