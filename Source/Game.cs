@@ -9,42 +9,57 @@ namespace PolygonCollision {
         public const int Height = 300;
         public const string Title = "Polygon Collision";
         
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public static GraphicsDeviceManager graphics;
+        public static SpriteBatch sb;
+
+        private Polygon polygon1;
+        private Polygon polygon2;
 
         public Game() {
-            _graphics = new GraphicsDeviceManager(this);
+            graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
         protected override void Initialize() {
-            _graphics.PreferredBackBufferWidth  = Width;
-            _graphics.PreferredBackBufferHeight = Height;
-            _graphics.ApplyChanges();
+            graphics.PreferredBackBufferWidth  = Width;
+            graphics.PreferredBackBufferHeight = Height;
+            graphics.ApplyChanges();
             Window.Title = Title;
             base.Initialize();
         }
 
         protected override void LoadContent() {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            sb = new SpriteBatch(GraphicsDevice);
+            
+            polygon1 = new Polygon(new Vector2[] {
+                new Vector2(180, 180), 
+                new Vector2(220, 180), 
+                new Vector2(220, 220), 
+                new Vector2(180, 220), 
+            });
+            
+            polygon2 = new Polygon(new Vector2[] {
+                new Vector2(64, 64), 
+                new Vector2(96, 32), 
+                new Vector2(154, 64), 
+                new Vector2(128, 128), 
+                new Vector2(96, 164), 
+                new Vector2(54, 128), 
+            });
         }
 
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
-
-            // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.Black);
-
-            // TODO: Add your drawing code here
-
+            sb.Begin();
+            polygon1.Draw();
+            polygon2.Draw();
+            sb.End();
             base.Draw(gameTime);
         }
     }
