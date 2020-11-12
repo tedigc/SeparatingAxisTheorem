@@ -5,9 +5,9 @@ using Microsoft.Xna.Framework.Input;
 namespace PolygonCollision {
     public class Game : Microsoft.Xna.Framework.Game {
         
-        public const int Width = 400;
-        public const int Height = 300;
-        public const string Title = "Polygon Collision";
+        private const int Width = 400;
+        private const int Height = 300;
+        private const string Title = "Polygon Collision";
         
         public static GraphicsDeviceManager graphics;
         public static SpriteBatch sb;
@@ -42,9 +42,9 @@ namespace PolygonCollision {
             polygon2 = new Polygon(new Vector2[] {
                 new Vector2(64, 64), 
                 new Vector2(96, 32), 
-                new Vector2(154, 64), 
-                new Vector2(128, 128), 
-                new Vector2(96, 164), 
+                new Vector2(154, 64),
+                new Vector2(128, 128),
+                new Vector2(96, 164),
                 new Vector2(54, 128), 
             });
         }
@@ -57,10 +57,13 @@ namespace PolygonCollision {
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.Black);
             sb.Begin();
-            polygon1.Draw();
-            polygon2.Draw();
+
+            DrawTools.DrawPolygon(polygon1);
+            DrawTools.DrawPolygon(polygon2);
+            
             sb.End();
             base.Draw(gameTime);
         }
+
     }
 }

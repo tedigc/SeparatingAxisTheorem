@@ -29,6 +29,7 @@
       <e p="PolygonCollision.csproj" t="IncludeRecursive" />
       <e p="Program.cs" t="Include" />
       <e p="Source" t="Include">
+        <e p="DrawTools.cs" t="Include" />
         <e p="Game.cs" t="Include" />
         <e p="Polygon.cs" t="Include" />
       </e>
