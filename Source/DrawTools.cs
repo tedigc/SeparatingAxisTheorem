@@ -15,19 +15,23 @@ namespace PolygonCollision {
         }
         
         public static void DrawPolygon(Polygon polygon) {
+            DrawPolygon(polygon, Color.DarkGray, Color.LightGray);
+        }
+        
+        public static void DrawPolygon(Polygon polygon, Color edgeColour, Color vertColour) {
             Vector2[] vertices = polygon.GetVertices();
             
             // Draw edges
             for (int i = 0; i < vertices.Length; i++) {
                 Vector2 v1 = vertices[i];
                 Vector2 v2 = vertices[(i + 1) % vertices.Length];
-                DrawEdge(v1, v2);
+                DrawEdge(v1, v2, edgeColour);
             }
             
             // Draw vertices
             for (int i = 0; i < vertices.Length; i++) {
                 Vector2 v1 = vertices[i];
-                DrawPoint(v1);
+                DrawPoint(v1, vertColour);
             }
         }
 

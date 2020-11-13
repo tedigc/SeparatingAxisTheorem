@@ -1,12 +1,20 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 
 namespace PolygonCollision {
     public class Polygon {
         
         private readonly Vector2[] vertices;
+        private Vector2 origin;
         public readonly int EdgeCount;
 
+        public Polygon(Vector2[] vertices, Vector2 origin, float angle) {
+            this.origin = origin;
+            this.vertices = vertices.Select(vertex => Vector2.Transform(vertex - origin, Matrix.CreateRotationZ(angle)) + origin).ToArray();
+            EdgeCount = vertices.Length;
+        }
+        
         public Polygon(Vector2[] vertices) {
             this.vertices = vertices;
             EdgeCount = vertices.Length;
