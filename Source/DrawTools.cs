@@ -32,11 +32,15 @@ namespace PolygonCollision {
         }
 
         public static void DrawPoint(Vector2 v1) {
+            DrawPoint(v1, Color.White);
+        }
+        
+        public static void DrawPoint(Vector2 v1, Color colour) {
             Game.sb.Draw(
                 texture, 
                 new Vector2(v1.X, v1.Y), 
                 new Rectangle(0, 0, PointSize, PointSize), 
-                Color.White, 
+                colour, 
                 0, 
                 new Vector2(PointSize * .5f, PointSize * .5f), 
                 1f, 
