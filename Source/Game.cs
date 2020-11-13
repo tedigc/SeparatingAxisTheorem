@@ -58,12 +58,18 @@ namespace PolygonCollision {
             GraphicsDevice.Clear(Color.Black);
             sb.Begin();
 
+            DrawTools.DrawEdge(polygon2.GetNormal(0).Item1, polygon2.GetNormal(0).Item2, Color.DarkCyan);
+            DrawTools.DrawEdge(polygon2.GetNormal(1).Item1, polygon2.GetNormal(1).Item2, Color.DarkCyan);
+            DrawTools.DrawEdge(polygon2.GetNormal(2).Item1, polygon2.GetNormal(2).Item2, Color.DarkCyan);
+            DrawTools.DrawEdge(polygon2.GetNormal(3).Item1, polygon2.GetNormal(3).Item2, Color.DarkCyan);
             DrawTools.DrawPolygon(polygon1);
             DrawTools.DrawPolygon(polygon2);
             
             sb.End();
             base.Draw(gameTime);
         }
+
+
 
     }
 }

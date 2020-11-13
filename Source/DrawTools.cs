@@ -6,6 +6,8 @@ namespace PolygonCollision {
     public static class DrawTools {
         
         private static readonly Texture2D texture;
+        private static int LineWidth = 2;
+        private static int PointSize = 4;
 
         static DrawTools() {
             texture = new Texture2D(Game.graphics.GraphicsDevice, 1, 1);
@@ -29,14 +31,14 @@ namespace PolygonCollision {
             }
         }
 
-        public static void DrawPoint(Vector2 v) {
+        public static void DrawPoint(Vector2 v1) {
             Game.sb.Draw(
                 texture, 
-                new Vector2(v.X, v.Y), 
-                new Rectangle(0, 0, 3, 3), 
+                new Vector2(v1.X, v1.Y), 
+                new Rectangle(0, 0, PointSize, PointSize), 
                 Color.White, 
                 0, 
-                new Vector2(1.5f, 1.5f), 
+                new Vector2(PointSize * .5f, PointSize * .5f), 
                 1f, 
                 SpriteEffects.None, 
                 0
@@ -44,6 +46,10 @@ namespace PolygonCollision {
         }
 
         public static void DrawEdge(Vector2 v1, Vector2 v2) {
+            DrawEdge(v1, v2, Color.DarkGray);
+        }
+        
+        public static void DrawEdge(Vector2 v1, Vector2 v2, Color colour) {
             Vector2 diff = v1 - v2;
             float angle = (float) (Math.Atan2(diff.Y, diff.X) + Math.PI);
             float length = Vector2.Distance(v1, v2);
@@ -51,14 +57,15 @@ namespace PolygonCollision {
             Game.sb.Draw(
                 texture, 
                 new Vector2(v1.X, v1.Y), 
-                new Rectangle(0, 0, (int) length, (int) 2), 
-                Color.Gray, 
+                new Rectangle(0, 0, (int) length, LineWidth), 
+                colour, 
                 angle, 
-                new Vector2(0, 2), 
+                new Vector2(0, LineWidth * .5f), 
                 1f, 
                 SpriteEffects.None, 
                 0
             );
         }
+
     }
 }
