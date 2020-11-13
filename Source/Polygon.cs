@@ -1,12 +1,15 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace PolygonCollision {
     public class Polygon {
         
         private readonly Vector2[] vertices;
+        public readonly int EdgeCount;
 
         public Polygon(Vector2[] vertices) {
             this.vertices = vertices;
+            EdgeCount = vertices.Length;
         }
 
         public Vector2[] GetVertices() {
@@ -26,6 +29,22 @@ namespace PolygonCollision {
         public Vector2 GetEdgeNormal(int index) {
             Vector2 edge = GetEdge(index);
             return new Vector2(edge.Y, -edge.X);
+        }
+
+        public List<Vector2> GetEdges() {
+            List<Vector2> edges = new List<Vector2>();
+            for (int i = 0; i < EdgeCount; i++) {
+                edges.Add(GetEdge(i));
+            }
+            return edges;
+        }
+        
+        public List<Vector2> GetEdgeNormals() {
+            List<Vector2> normals = new List<Vector2>();
+            for (int i = 0; i < EdgeCount; i++) {
+                normals.Add(GetEdgeNormal(i));
+            }
+            return normals;
         }
 
     }
