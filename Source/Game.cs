@@ -49,34 +49,33 @@ namespace PolygonCollision {
             GraphicsDevice.Clear(Color.Black);
             sb.Begin();
             
+            // Draw polygons
             DrawTools.DrawPolygon(polygon1);
             DrawTools.DrawPolygon(polygon2);
-            DrawTools.DrawEdge(polygon2.GetNormal(0).Item1, polygon2.GetNormal(0).Item2, Color.DarkCyan);
 
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[0], polygon2.GetNormal(1)), Color.Red);
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[1], polygon2.GetNormal(1)), Color.Red);
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[2], polygon2.GetNormal(1)), Color.Red);
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[3], polygon2.GetNormal(1)), Color.Red);
-
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[0], polygon2.GetNormal(1)), Color.Green);
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[1], polygon2.GetNormal(1)), Color.Green);
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[2], polygon2.GetNormal(1)), Color.Green);
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[3], polygon2.GetNormal(1)), Color.Green);
+            // Draw normal
+            DrawTools.DrawEdge(polygon2.GetVertex(0), polygon2.GetVertex(0) - polygon2.GetEdgeNormal(0), Color.DarkCyan);
             
+            // Draw axis projections
+            DrawTools.DrawPoint(Project(polygon1.GetVertices()[0], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(Project(polygon1.GetVertices()[1], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(Project(polygon1.GetVertices()[2], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(Project(polygon1.GetVertices()[3], polygon2.GetEdgeNormal(1)), Color.Red);
+            //
+            DrawTools.DrawPoint(Project(polygon2.GetVertices()[0], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(Project(polygon2.GetVertices()[1], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(Project(polygon2.GetVertices()[2], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(Project(polygon2.GetVertices()[3], polygon2.GetEdgeNormal(1)), Color.Green);
+
             sb.End();
             base.Draw(gameTime);
         }
-
-        private Vector2 Project(Vector2 v1, Tuple<Vector2, Vector2> edge) {
-            Vector2 diff = Vector2.Subtract(edge.Item1, edge.Item2);
-            float dot = Vector2.Dot(v1, diff);
-            float mag2 = diff.LengthSquared();
-            return dot / mag2 * diff;
+        
+        private Vector2 Project(Vector2 v1, Vector2 edge) {
+            float dot = Vector2.Dot(v1, edge);
+            float mag2 = edge.LengthSquared();
+            return dot / mag2 * edge;
         }
-
-        // private Vector2 ProjectionToScalar() {
-        //     
-        // }
 
     }
 }
