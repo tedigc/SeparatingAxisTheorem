@@ -16,6 +16,8 @@ namespace PolygonCollision {
         private Polygon polygon1;
         private Polygon polygon2;
 
+        private Vector2 position1;
+
         public Game() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -32,9 +34,11 @@ namespace PolygonCollision {
 
         protected override void LoadContent() {
             sb = new SpriteBatch(GraphicsDevice);
+            
+            position1 = new Vector2(128, 128);
+            
             polygon1 = PolygonFactory.CreateRectangle(128, 128, 32, 32);
             polygon2 = PolygonFactory.CreateRectangle(176, 116, 48, 48);
-            Console.WriteLine(PolygonTools.Intersect(polygon1, polygon2));
         }
 
         protected override void Update(GameTime gameTime) {
@@ -48,6 +52,15 @@ namespace PolygonCollision {
             
             DrawTools.DrawPolygon(polygon1);
             DrawTools.DrawPolygon(polygon2);
+
+            float speed = 125f;
+            if (Keyboard.GetState().IsKeyDown(Keys.D)) position1.X += speed * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            if (Keyboard.GetState().IsKeyDown(Keys.A)) position1.X -= speed * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            if (Keyboard.GetState().IsKeyDown(Keys.W)) position1.Y -= speed * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            if (Keyboard.GetState().IsKeyDown(Keys.S)) position1.Y += speed * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            
+            polygon1 = PolygonFactory.CreateRectangle((int) position1.X, (int) position1.Y, 32, 32);
+            Console.WriteLine(PolygonTools.Intersect(polygon1, polygon2));
 
             sb.End();
             base.Draw(gameTime);
