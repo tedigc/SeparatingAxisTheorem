@@ -35,7 +35,6 @@ namespace PolygonCollision {
 
         protected override void LoadContent() {
             sb = new SpriteBatch(GraphicsDevice);
-
             polygon1 = PolygonFactory.CreateRectangle(128, 128, 32, 32);
             polygon2 = PolygonFactory.CreateRectangle(176, 116, 48, 48);
         }
@@ -57,24 +56,18 @@ namespace PolygonCollision {
             DrawTools.DrawEdge(polygon2.GetVertex(0), polygon2.GetVertex(0) - polygon2.GetEdgeNormal(0), Color.DarkCyan);
             
             // Draw axis projections
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[0], polygon2.GetEdgeNormal(1)), Color.Red);
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[1], polygon2.GetEdgeNormal(1)), Color.Red);
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[2], polygon2.GetEdgeNormal(1)), Color.Red);
-            DrawTools.DrawPoint(Project(polygon1.GetVertices()[3], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon1.GetVertices()[0], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon1.GetVertices()[1], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon1.GetVertices()[2], polygon2.GetEdgeNormal(1)), Color.Red);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon1.GetVertices()[3], polygon2.GetEdgeNormal(1)), Color.Red);
             //
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[0], polygon2.GetEdgeNormal(1)), Color.Green);
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[1], polygon2.GetEdgeNormal(1)), Color.Green);
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[2], polygon2.GetEdgeNormal(1)), Color.Green);
-            DrawTools.DrawPoint(Project(polygon2.GetVertices()[3], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon2.GetVertices()[0], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon2.GetVertices()[1], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon2.GetVertices()[2], polygon2.GetEdgeNormal(1)), Color.Green);
+            DrawTools.DrawPoint(PolygonTools.Project(polygon2.GetVertices()[3], polygon2.GetEdgeNormal(1)), Color.Green);
 
             sb.End();
             base.Draw(gameTime);
-        }
-        
-        private Vector2 Project(Vector2 v1, Vector2 edge) {
-            float dot = Vector2.Dot(v1, edge);
-            float mag2 = edge.LengthSquared();
-            return dot / mag2 * edge;
         }
 
     }
