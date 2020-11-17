@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj": {}
+    "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj": {}
   },
   "projects": {
-    "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj": {
+    "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj",
+        "projectUniqueName": "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj",
         "projectName": "PolygonCollision",
-        "projectPath": "/Users/tedigc/Desktop/PolygonCollision/PolygonCollision.csproj",
+        "projectPath": "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj",
         "packagesPath": "/Users/tedigc/.nuget/packages/",
-        "outputPath": "/Users/tedigc/Desktop/PolygonCollision/obj/",
+        "outputPath": "/Users/tedigc/Documents/gamedev/projects/mgsat/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tedigc/.nuget/NuGet/NuGet.Config"

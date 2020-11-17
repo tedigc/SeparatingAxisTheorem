@@ -14,6 +14,7 @@ namespace PolygonCollision {
 
         private Polygon polygon1;
         private Polygon polygon2;
+        private Circle circle1;
         
         private Vector2 position;
         private float angle;
@@ -37,9 +38,13 @@ namespace PolygonCollision {
 
         protected override void LoadContent() {
             sb = new SpriteBatch(GraphicsDevice);
+            Texture2D texture = Content.Load<Texture2D>("textures/circle");
+            Assets.get().SetTexture("circle", texture);
+            
             position = new Vector2(128, 128);
             polygon1 = PolygonFactory.CreateRectangle(128, 128, 32, 32);
             polygon2 = PolygonFactory.CreateRectangle(176, 116, 48, 48);
+            circle1 = new Circle(new Vector2(50, 50), 16);
         }
 
         protected override void Update(GameTime gameTime) {
@@ -68,6 +73,7 @@ namespace PolygonCollision {
             Color vertColour = intersecting ? Color.Pink : Color.LightGreen;
             DrawTools.DrawPolygon(polygon1, edgeColour, vertColour);
             DrawTools.DrawPolygon(polygon2, edgeColour, vertColour);
+            circle1.Draw();
 
             sb.End();
             base.Draw(gameTime);
