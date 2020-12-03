@@ -14,8 +14,16 @@ namespace PolygonCollision {
             texture = Assets.get().GetTexture("circle");
         }
 
-        public void Draw() {
-            Game.sb.Draw(texture, new Rectangle((int) position.X, (int) position.Y, (int) radius*2, (int) radius*2), Color.White );
+        public void Draw(Color color) {
+            Game.sb.Draw(texture, new Rectangle((int) (position.X - radius), (int) (position.Y - radius), (int) radius*2, (int) radius*2), color );
+        }
+
+        public Vector2 GetPosition() {
+            return position;
+        }
+
+        public float GetRadius() {
+            return radius;
         }
 
     }
