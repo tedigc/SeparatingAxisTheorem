@@ -9,17 +9,12 @@ namespace PolygonCollision {
             List<Vector2> normals = new List<Vector2>();
             normals.AddRange(polygon.GetEdgeNormals());
             normals.Add(GetPolygonCircleAxis(polygon, circle));
-
-            // Vector2 axis = GetPolygonCircleAxis(polygon, circle);
-            // GetMinMaxProjections(circle, axis);
-
             foreach (Vector2 axis in normals) {
                 var (min1, max1) = GetMinMaxProjections(polygon, axis);
                 var (min2, max2) = GetMinMaxProjections(circle, axis);
                 float intervalDistance = min1 < min2 ? min2 - max1 : min1 - max2;
                 if (intervalDistance >= 0) return false;
             }
-
             return true;
         }
 
@@ -48,36 +43,14 @@ namespace PolygonCollision {
             return (min, max);
         }
         
-        // // Old - didn't work
-        // private static (float, float) GetMinMaxProjections(Circle circle, Vector2 axis) {
-        //     Vector2 projection = Project(circle.GetPosition(), axis);
-        //     DrawTools.DrawPoint(projection, Color.White);
-        //     float scalar = Scalar(projection, axis);
-        //     return (scalar, scalar);
-        // }
-        
         private static (float, float) GetMinMaxProjections(Circle circle, Vector2 axis) {
-            // Vector2 projection = Project(circle.GetPosition() - axis, axis);
-            // DrawTools.DrawPoint(projection, Color.White);
-            // float scalar = Scalar(projection, axis);
-            // return (scalar, scalar);
-        
             Vector2 v1 = circle.GetPosition() - Vector2.Normalize(axis) * circle.GetRadius(); 
             Vector2 v2 = circle.GetPosition() + Vector2.Normalize(axis) * circle.GetRadius();
-
             Vector2 p1 = Project(v1, axis);
             Vector2 p2 = Project(v2, axis);
-
             float s1 = Scalar(p1, axis);
             float s2 = Scalar(p2, axis);
-            
-            DrawTools.DrawPoint(v1, Color.Pink);
-            DrawTools.DrawPoint(v2, Color.Pink);
-            DrawTools.DrawPoint(p1, Color.Cyan);
-            DrawTools.DrawPoint(p2, Color.Cyan);
-
-            if (s1 > s2) return (s2, s1);
-            return (s1, s2);
+            return (s1 > s2) ? (s2, s1) : (s1, s2);
         }
 
         private static Vector2 Project(Vector2 vertex, Vector2 axis) {
@@ -94,13 +67,6 @@ namespace PolygonCollision {
             Vector2 nearestVertex = FindClosestVertex(polygon, circle.GetPosition());
             Vector2 axis = circle.GetPosition() - nearestVertex;
             Vector2 perp = new Vector2(axis.Y, -axis.X);
-
-            // @TODO Remove this
-            DrawTools.DrawEdge(nearestVertex, circle.GetPosition(), Color.DarkGray);
-            DrawTools.DrawPoint(nearestVertex, Color.Cyan);
-            DrawTools.DrawPoint(circle.GetPosition(), Color.Cyan);
-            DrawTools.DrawEdge(circle.GetPosition(), circle.GetPosition() + perp, Color.DarkGray);
-            
             return perp;
         }
 

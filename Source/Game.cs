@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -69,16 +68,17 @@ namespace PolygonCollision {
             GraphicsDevice.Clear(Color.Black);
             sb.Begin();
             
-            // bool intersecting = PolygonTools.Intersect(polygon1, polygon2);
-            bool intersecting = false;
+            // Polygon-polygon
+            bool intersecting = PolygonTools.Intersect(polygon1, polygon2);
             Color edgeColour = intersecting ? Color.Red : Color.Green;
             Color vertColour = intersecting ? Color.Pink : Color.LightGreen;
             DrawTools.DrawPolygon(polygon1, edgeColour, vertColour);
             DrawTools.DrawPolygon(polygon2, edgeColour, vertColour);
-            circle1.Draw(edgeColour);
-
+            
+            // Polygon-circle
             bool intersectingcircle = PolygonTools.Intersect(polygon1, circle1);
-            Console.WriteLine(intersectingcircle);
+            edgeColour = intersectingcircle ? Color.Red : Color.Green;
+            circle1.Draw(edgeColour);
 
             sb.End();
             base.Draw(gameTime);
