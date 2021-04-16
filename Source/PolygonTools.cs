@@ -4,8 +4,34 @@ using Microsoft.Xna.Framework;
 
 namespace PolygonCollision {
     public static class PolygonTools {
+        
+        public static bool Intersect(Shape shape1, Shape shape2) {
+            if(shape1.GetType() == typeof(Polygon) && shape2.GetType() == typeof(Polygon)) {
+                return Intersect((Polygon) shape1, (Polygon) shape2);
+            }
 
-        public static bool Intersect(Polygon polygon, Circle circle) {
+            if (shape1.GetType() == typeof(Polygon) && shape2.GetType() == typeof(Circle)) {
+                return Intersect((Polygon) shape1, (Circle) shape2);
+            }
+            
+            if (shape1.GetType() == typeof(Circle) && shape2.GetType() == typeof(Polygon)) {
+                return Intersect((Polygon) shape2, (Circle) shape1);
+            }
+            
+            if (shape1.GetType() == typeof(Circle) && shape2.GetType() == typeof(Circle)) {
+                return Intersect((Circle) shape1, (Circle) shape2);
+            }
+
+            Console.WriteLine("Warning: shape types not recognised");
+            return false;
+        }
+        
+        private static bool Intersect(Circle circle1, Circle circle2) {
+            Vector2 dv = circle2.GetPosition() - circle1.GetPosition();
+            return dv.X * dv.X + dv.Y * dv.Y <= MathF.Pow(circle1.GetRadius() + circle2.GetRadius(), 2);
+        }
+
+        private static bool Intersect(Polygon polygon, Circle circle) {
             List<Vector2> normals = new List<Vector2>();
             normals.AddRange(polygon.GetEdgeNormals());
             normals.Add(GetPolygonCircleAxis(polygon, circle));
@@ -18,7 +44,7 @@ namespace PolygonCollision {
             return true;
         }
 
-        public static bool Intersect(Polygon polygon1, Polygon polygon2) {
+        private static bool Intersect(Polygon polygon1, Polygon polygon2) {
             List<Vector2> normals = new List<Vector2>();
             normals.AddRange(polygon1.GetEdgeNormals());
             normals.AddRange(polygon2.GetEdgeNormals());

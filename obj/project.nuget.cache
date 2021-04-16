@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tzg62jBS8+fUpSlXL3Re77bOQ02R2HoBJBDcb0DIQslsEhYFPzly7Z1zouWKjMJxUN5YCM9fW921tVRK2urPgA==",
+  "dgSpecHash": "glaE+tizAUJ1sH6vzwfr75XXk6Ukk7zP4xbSB/J92lBsHkjmVjvVF7Ud1jjfVbRICQ5wFzMNkxvVHqf5ig4mLA==",
   "success": true,
-  "projectFilePath": "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj",
+  "projectFilePath": "/Users/tedigc/Documents/projects/mgsat/PolygonCollision.csproj",
   "expectedPackageFiles": [
     "/Users/tedigc/.nuget/packages/monogame.content.builder.task/3.8.0.1641/monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "/Users/tedigc/.nuget/packages/monogame.framework.desktopgl/3.8.0.1641/monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"

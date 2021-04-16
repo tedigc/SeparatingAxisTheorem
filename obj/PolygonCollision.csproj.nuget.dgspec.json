@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj": {}
+    "/Users/tedigc/Documents/projects/mgsat/PolygonCollision.csproj": {}
   },
   "projects": {
-    "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj": {
+    "/Users/tedigc/Documents/projects/mgsat/PolygonCollision.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj",
+        "projectUniqueName": "/Users/tedigc/Documents/projects/mgsat/PolygonCollision.csproj",
         "projectName": "PolygonCollision",
-        "projectPath": "/Users/tedigc/Documents/gamedev/projects/mgsat/PolygonCollision.csproj",
+        "projectPath": "/Users/tedigc/Documents/projects/mgsat/PolygonCollision.csproj",
         "packagesPath": "/Users/tedigc/.nuget/packages/",
-        "outputPath": "/Users/tedigc/Documents/gamedev/projects/mgsat/obj/",
+        "outputPath": "/Users/tedigc/Documents/projects/mgsat/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tedigc/.nuget/NuGet/NuGet.Config"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
@@ -60,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

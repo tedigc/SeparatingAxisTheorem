@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 
 namespace PolygonCollision {
-    public class Polygon {
+    public class Polygon : Shape {
         
         private readonly Vector2[] vertices;
         private Vector2 origin;

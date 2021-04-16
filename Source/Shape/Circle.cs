@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PolygonCollision {
-    public class Circle {
+    public class Circle : Shape {
 
         private Texture2D texture;
         private Vector2 position;
@@ -24,6 +24,11 @@ namespace PolygonCollision {
 
         public float GetRadius() {
             return radius;
+        }
+
+        public void SetPosition(float x, float y) {
+            position.X = x;
+            position.Y = y;
         }
 
     }
