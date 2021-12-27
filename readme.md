@@ -15,9 +15,9 @@ $ mgcb --outputDir=bin/Debug/netcoreapp3.1 --build=Content/textures/circle.png
 possible extensions
 
 - [x] circle collision
-- [ ] improved api for translating and rotating polygons
+- [x] improved api for translating and rotating polygons
+- [ ] calculating the minimum translation vector (mtv)
 - [ ] convex decomposition
 - [ ] exception handling
-- [ ] calculating the minimum translation vector (mtv)
 
 created by [tedigc](https://github.com/tedigc)
