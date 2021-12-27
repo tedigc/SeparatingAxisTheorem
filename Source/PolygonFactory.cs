@@ -8,7 +8,7 @@ namespace PolygonCollision {
         }
         
         public static Polygon CreateRectangle(int x, int y, int width, int height, float angle) {
-            Vector2 origin = new Vector2(x + width * .5f, y + height * .5f);
+            Vector2 origin = new Vector2(width * .5f, height * .5f);
             return CreateRectangle(x, y, width, height, angle, origin);
         }
         

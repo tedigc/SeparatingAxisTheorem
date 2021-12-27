@@ -33,6 +33,9 @@ namespace PolygonCollision {
                 Vector2 v1 = vertices[i];
                 DrawPoint(v1, vertColour);
             }
+            
+            // Draw origin
+            DrawPoint(polygon.GetPosition(), vertColour);
         }
 
         public static void DrawPoint(Vector2 v1) {

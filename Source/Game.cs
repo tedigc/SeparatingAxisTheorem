@@ -44,7 +44,16 @@ namespace PolygonCollision {
             
             position = new Vector2(128, 128);
             polygon1 = PolygonFactory.CreateRectangle(128, 128, 32, 32);
-            polygon2 = PolygonFactory.CreateRectangle(176, 116, 48, 48);
+
+            polygon2 = new Polygon(new[] {
+                new Vector2(position.X, position.Y),
+                new Vector2(position.X + 32, position.Y),
+                new Vector2(position.X + 64, position.Y + 16),
+                new Vector2(position.X + 32, position.Y + 32),
+                new Vector2(position.X, position.Y + 32),
+            }, new Vector2(48, 16));
+            
+            
             circle1 = new Circle(new Vector2(50, 50), 16);
             circle2 = new Circle(new Vector2(100, 100), 4);
         }
@@ -61,7 +70,9 @@ namespace PolygonCollision {
             
             // Update polygon
             angle += dt * RotateSpeed;
-            polygon1 = PolygonFactory.CreateRectangle((int) position.X, (int) position.Y, 32, 32, angle);
+            polygon1.SetPosition(position);
+            polygon1.SetAngle(angle);
+            polygon2.SetAngle(-angle);
             
             // Update circle
             circle2.SetPosition(Mouse.GetState().X, Mouse.GetState().Y);
@@ -84,12 +95,6 @@ namespace PolygonCollision {
             bool intersectingcircle = PolygonTools.Intersect(polygon1, circle1);
             edgeColour = intersectingcircle ? Color.Red : Color.Green;
             circle1.Draw(edgeColour);
-
-            // bool intersects = PolygonTools.Intersect(circle1, circle2);
-            // Color color1 = intersects ? Color.DarkCyan : Color.Cyan;
-            // Color color2 = intersects ? Color.DarkGreen : Color.Green;
-            // circle1.Draw(color1);
-            // circle2.Draw(color2);
 
             sb.End();
             base.Draw(gameTime);
