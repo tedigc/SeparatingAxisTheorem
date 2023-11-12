@@ -1,2 +1,2 @@
-﻿using var game = new SatTheorem.Demo.Game();
+﻿using var game = new Halfcut.SatTheorem.Demo.Game();
 game.Run();
