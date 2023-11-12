@@ -2,6 +2,8 @@
 
 A Monogame implementation of the Separating Axis Theorem for convex polygon intersection.
 
+[View on nuget](https://www.nuget.org/packages/Halfcut.SeparatingAxisTheorem.Lib/)
+
 ## Usage
 
 ```c#
