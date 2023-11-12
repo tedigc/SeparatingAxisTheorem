@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "fWyB9XdNJ+dfBrRgM4LnFpRgCJNtsnld4H9HFrVcbFY748Ymt7mR2kR0/sI2IixSCI/MqdMNrmDXhv5sJgW3Zw==",
+  "success": true,
+  "projectFilePath": "/Users/personal/Documents/projects/games/mgsat/SeparatingAxisTheorem.Demo/SeparatingAxisTheorem.Demo.csproj",
+  "expectedPackageFiles": [
+    "/Users/personal/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "/Users/personal/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "/Users/personal/.nuget/packages/microsoft.netcore.app.ref/6.0.16/microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "/Users/personal/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.16/microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "/Users/personal/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.16/microsoft.netcore.app.host.osx-arm64.6.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
