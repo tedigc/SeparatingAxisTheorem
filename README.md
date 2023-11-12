@@ -36,9 +36,9 @@ You can move the rotating square with WASD.
 
 - [x] Circle collision
 - [x] Improve api for translating and rotating polygons
+- [x] Publish as a nuget package
 - [ ] Calculate the minimum translation vector (MTV)
 - [ ] Convex decomposition for non-convex polygons
 - [ ] Exception handling
-- [ ] Publish as a nuget package
 
 Created by Ted Cater ([tedigc](https://github.com/tedigc))
