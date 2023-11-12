@@ -1,0 +1,12 @@
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/bin/Debug/net6.0/SatTheorem.Lib.deps.json
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/bin/Debug/net6.0/SatTheorem.Lib.dll
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/bin/Debug/net6.0/SatTheorem.Lib.pdb
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.csproj.AssemblyReference.cache
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.AssemblyInfoInputs.cache
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.AssemblyInfo.cs
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.csproj.CoreCompileInputs.cache
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.dll
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/refint/SatTheorem.Lib.dll
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/SatTheorem.Lib.pdb
+/Users/personal/Documents/projects/games/mgsat/SatTheorem.Lib/obj/Debug/net6.0/ref/SatTheorem.Lib.dll
