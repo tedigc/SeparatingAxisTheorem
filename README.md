@@ -1,4 +1,4 @@
-# SatTheorem
+# SeparatingAxisTheorem
 
 A Monogame implementation of the Separating Axis Theorem for convex polygon intersection.
 
