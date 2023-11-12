@@ -1,3 +1,2 @@
-﻿
-using var game = new SatTheorem.Demo.Game1();
+﻿using var game = new SatTheorem.Demo.Game();
 game.Run();
