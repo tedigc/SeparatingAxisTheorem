@@ -1,10 +1,8 @@
-![demo](Media/demo.gif?raw=true "demo")
-
-a monogame implementation of the separating axis theorem for convex polygon intersection
+A Monogame implementation of the Separating Axis Theorem for convex polygon intersection.
 
 ---
 
-to generate the necessary `.xnb` files, run:
+To generate the necessary `.xnb` files, run:
 
 ```bash
 $ mgcb --outputDir=bin/Debug/netcoreapp3.1 --build=Content/textures/circle.png
@@ -12,12 +10,12 @@ $ mgcb --outputDir=bin/Debug/netcoreapp3.1 --build=Content/textures/circle.png
 
 ---
 
-possible extensions
+Possible extensions
 
-- [x] circle collision
-- [x] improved api for translating and rotating polygons
-- [ ] calculating the minimum translation vector (mtv)
-- [ ] convex decomposition
-- [ ] exception handling
+- [x] Circle collision
+- [x] Improved api for translating and rotating polygons
+- [ ] Calculating the minimum translation vector (mtv)
+- [ ] Convex decomposition
+- [ ] Exception handling
 
-created by [tedigc](https://github.com/tedigc)
+Created by Ted Cater ([tedigc](https://github.com/tedigc))

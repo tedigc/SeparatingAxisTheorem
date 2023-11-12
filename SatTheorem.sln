@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatTheorem.Demo", "SatTheorem.Demo\SatTheorem.Demo.csproj", "{9233CA36-329D-4394-A63D-FF68959F00AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatTheorem.Lib", "SatTheorem.Lib\SatTheorem.Lib.csproj", "{98350D0A-396E-494B-BAB7-3158E0BB4BAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9233CA36-329D-4394-A63D-FF68959F00AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9233CA36-329D-4394-A63D-FF68959F00AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9233CA36-329D-4394-A63D-FF68959F00AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9233CA36-329D-4394-A63D-FF68959F00AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98350D0A-396E-494B-BAB7-3158E0BB4BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98350D0A-396E-494B-BAB7-3158E0BB4BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98350D0A-396E-494B-BAB7-3158E0BB4BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98350D0A-396E-494B-BAB7-3158E0BB4BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

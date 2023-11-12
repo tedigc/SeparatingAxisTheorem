@@ -1,3 +1,6 @@
-bin/
+**/.DS_Store
 .idea/
-obj/Debug/
+SatTheorem.Demo/obj
+SatTheorem.Demo/bin
+SatTheorem.Lib/obj
+SatTheorem.Lib/bin
