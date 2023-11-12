@@ -12,7 +12,7 @@ public static class Renderer {
     private static int PointSize = 4;
 
     static Renderer() {
-        _texture = new Texture2D(Game.graphics.GraphicsDevice, 1, 1);
+        _texture = new Texture2D(Game.Graphics.GraphicsDevice, 1, 1);
         _texture.SetData(new []{ Color.White });
     }
     
@@ -45,7 +45,7 @@ public static class Renderer {
     }
     
     public static void DrawPoint(Vector2 v1, Color colour) {
-        Game.spriteBatch.Draw(
+        Game.SpriteBatch.Draw(
             _texture, 
             new Vector2(v1.X, v1.Y), 
             new Rectangle(0, 0, PointSize, PointSize), 
@@ -67,7 +67,7 @@ public static class Renderer {
         float angle = (float) (Math.Atan2(diff.Y, diff.X) + Math.PI);
         float length = Vector2.Distance(v1, v2);
             
-        Game.spriteBatch.Draw(
+        Game.SpriteBatch.Draw(
             _texture, 
             new Vector2(v1.X, v1.Y), 
             new Rectangle(0, 0, (int) length, LineWidth), 

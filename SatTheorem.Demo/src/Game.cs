@@ -6,11 +6,11 @@ namespace Halfcut.SatTheorem.Demo;
 
 public class Game : Microsoft.Xna.Framework.Game {
     
-    public static GraphicsDeviceManager graphics;
-    public static SpriteBatch spriteBatch;
+    public static GraphicsDeviceManager Graphics;
+    public static SpriteBatch SpriteBatch;
 
     public Game() {
-        graphics = new GraphicsDeviceManager(this);
+        Graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -22,7 +22,7 @@ public class Game : Microsoft.Xna.Framework.Game {
     }
 
     protected override void LoadContent() {
-        spriteBatch = new SpriteBatch(GraphicsDevice);
+        SpriteBatch = new SpriteBatch(GraphicsDevice);
 
         // TODO: use this.Content to load your game content here
     }
